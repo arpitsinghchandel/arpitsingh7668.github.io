@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Privacy Policy for Arpit Singh's portfolio website.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#081120">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="img/icon-64.png">
+  <link rel="canonical" href="https://arpitsingh.free.nf/privacy.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+
+  <title>Privacy Policy — Arpit Singh</title>
+
+  <style>
+    :root {
+      --ink: #081120; --surface: #101F36; --surface-2: #0C1A2C; --paper: #ECEFF4;
+      --muted: #8FA0B8; --signal: #FF8A4C; --signal-rgb: 255, 138, 76;
+      --trace: #5FD9E8; --trace-rgb: 95, 217, 232; --blue-rgb: 143, 160, 184;
+      --rule: rgba(var(--blue-rgb), 0.18); --rule-strong: rgba(var(--blue-rgb), 0.32);
+      --grid-line: rgba(var(--blue-rgb), 0.05);
+      --font-display: 'Syne', sans-serif; --font-body: 'Inter', sans-serif; --font-mono: 'JetBrains Mono', monospace;
+      --ease: cubic-bezier(.22, .61, .36, 1); --grid-size: 44px; --max: 760px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh; background-color: var(--ink);
+      background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+      background-size: var(--grid-size) var(--grid-size); background-attachment: fixed;
+      color: var(--paper); font-family: var(--font-body); line-height: 1.7; -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--trace); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ::selection { background: rgba(var(--signal-rgb), 0.35); color: var(--paper); }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--trace); outline-offset: 3px; border-radius: 4px; }
+
+    .legal-header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(8, 17, 32, 0.75); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--rule);
+      padding: 1rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .legal-header__logo { font-family: var(--font-display); font-weight: 800; color: var(--paper); }
+    .legal-header__back { font-family: var(--font-mono); font-size: 0.85rem; color: var(--muted); }
+    .legal-header__back:hover { color: var(--trace); }
+
+    .legal-wrap { max-width: var(--max); margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+    .legal-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.06em; color: var(--muted);
+      border: 1px solid var(--rule); background: rgba(16, 31, 54, 0.5);
+      padding: 0.4rem 0.85rem; border-radius: 999px; margin-bottom: 1.5rem;
+    }
+    .legal-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--signal); }
+
+    .legal-title { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.8rem, 5vw, 2.6rem); margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+    .legal-updated { font-family: var(--font-mono); font-size: 0.82rem; color: var(--muted); margin-bottom: 2.5rem; }
+
+    .legal-section { margin-bottom: 2.2rem; }
+    .legal-section h2 {
+      font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; color: var(--trace);
+      margin-bottom: 0.8rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--rule);
+    }
+    .legal-section p, .legal-section li { color: rgba(236, 239, 244, 0.88); font-size: 0.98rem; }
+    .legal-section p + p { margin-top: 0.8rem; }
+    .legal-section ul { padding-left: 1.3rem; margin-top: 0.6rem; }
+    .legal-section li + li { margin-top: 0.5rem; }
+    .legal-section li::marker { color: var(--signal); }
+
+    .legal-table { width: 100%; border-collapse: collapse; margin-top: 0.8rem; font-size: 0.92rem; }
+    .legal-table th, .legal-table td { text-align: left; padding: 0.6rem 0.7rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    .legal-table th { font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted); font-weight: 600; }
+
+    .legal-footer {
+      max-width: var(--max); margin: 0 auto; padding: 0 1.5rem 3rem;
+      font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); text-align: center;
+    }
+    .legal-footer a { color: var(--muted); }
+    .legal-footer a:hover { color: var(--trace); }
+
+    @media (max-width: 480px) {
+      .legal-table { font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="legal-header">
+    <span class="legal-header__logo">Arpit Singh</span>
+    <a href="index.html" class="legal-header__back">← Back to Home</a>
+  </header>
+
+  <main class="legal-wrap">
+    <p class="legal-badge"><span class="legal-badge-dot" aria-hidden="true"></span>LEGAL.LOG</p>
+    <h1 class="legal-title">Privacy Policy</h1>
+    <p class="legal-updated">Last updated: August 2026</p>
+
+    <div class="legal-section">
+      <h2>1. What this covers</h2>
+      <p>This policy explains what happens to your information when you visit this portfolio website. This is a small personal site — it doesn't run ads, doesn't use analytics or tracking cookies, and doesn't sell or share your data with anyone.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>2. Information collected through the contact form</h2>
+      <p>If you use the contact form, the name, email address, and message you enter are submitted to <strong>Formspree</strong>, a third-party form-handling service, which forwards the message by email. That's the only personal information this Site actively collects, and it's only collected if you choose to submit the form.</p>
+      <p>Formspree processes that data on its own servers under its own privacy policy. You can review it directly at <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">formspree.io/legal/privacy-policy</a>.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>3. Third-party resources loaded by this Site</h2>
+      <p>To render properly, this Site loads a small number of resources from third-party providers. These providers may log standard technical data (like your IP address and browser type) when your browser requests their files — this Site doesn't control that logging.</p>
+      <table class="legal-table">
+        <thead>
+          <tr><th>Provider</th><th>Used for</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Google Fonts</td><td>Web fonts (Syne, Inter, JetBrains Mono)</td></tr>
+          <tr><td>jsDelivr (Boxicons)</td><td>Icon set</td></tr>
+          <tr><td>unpkg (ScrollReveal)</td><td>Scroll-triggered animations</td></tr>
+          <tr><td>Cloudinary</td><td>Hosting for the video samples in the Photos section</td></tr>
+          <tr><td>Formspree</td><td>Delivering contact form submissions</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="legal-section">
+      <h2>4. Cookies and local storage</h2>
+      <p>This Site itself does not set any cookies or use browser storage to track you. Any of the third-party providers listed above may set their own cookies as part of their normal operation — that's governed by their respective policies, not this one.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>5. Your choices</h2>
+      <ul>
+        <li>You can browse the Site without submitting the contact form, in which case no personal data is sent anywhere.</li>
+        <li>You can use browser extensions or settings to block third-party resources if you'd prefer not to load fonts, icons, or the animation library from external CDNs.</li>
+        <li>You can email directly instead of using the form, if you'd rather not go through Formspree.</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>6. Changes to this policy</h2>
+      <p>This policy may be updated if the Site's tools or services change. The "Last updated" date at the top will reflect the latest revision.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>7. Contact</h2>
+      <p>For any privacy-related questions, reach out at <a href="mailto:thakurarpit5999@gmail.com">thakurarpit5999@gmail.com</a>.</p>
+    </div>
+  </main>
+
+  <p class="legal-footer">
+    <a href="index.html">Home</a> &middot; <a href="terms.html">Terms of Use</a> &middot; &#169; Arpit Singh
+  </p>
+
+</body>
+</html>

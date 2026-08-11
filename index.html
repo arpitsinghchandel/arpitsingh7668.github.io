@@ -1,0 +1,2170 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <!-- Meta Tags -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Arpit Singh is a web developer from Jaunpur, UP, crafting fast, responsive websites with HTML, CSS & JavaScript. Explore his portfolio and projects.">
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="author" content="Arpit Singh">
+
+    <meta name="theme-color" content="#081120">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="img/icon-64.png">
+
+
+
+    <!-- Preconnects for faster loading (Core Web Vitals) -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+    <link rel="preconnect" href="https://res.cloudinary.com">
+
+    <!-- Preload the LCP candidate (hero renders on first paint; no image LCP here,
+         but we preload the responsive avatar so it doesn't compete once discovered) -->
+    <link rel="preload" as="image" href="img/about1-300.jpg" imagesrcset="img/about1-150.jpg 150w, img/about1-300.jpg 300w, img/about1-450.jpg 450w" imagesizes="150px">
+
+    <!-- Sitemap hint for crawlers -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+    <!-- Google Analytics (GA4) -----------------------------------------
+         Replace G-XXXXXXXXXX below with your actual Measurement ID from
+         analytics.google.com before deploying, otherwise no data will
+         be recorded. ------------------------------------------------- -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+
+
+    <!-- Open Graph Meta Tags for Social Sharing -->
+
+    <meta property="og:title" content="Arpit Singh - Web Developer Portfolio">
+
+    <meta property="og:description" content="Explore Arpit Singh's web development projects, skills, and work in HTML, CSS, and JavaScript.">
+
+    <meta property="og:image" content="https://arpitsingh.free.nf/icon.png">
+
+    <meta property="og:url" content="https://arpitsingh.free.nf">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:locale" content="en_US">
+
+    <meta property="og:site_name" content="Arpit Singh Portfolio">
+
+
+
+    <!-- Twitter Card Meta Tags -->
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="twitter:title" content="Arpit Singh - Web Developer Portfolio">
+
+    <meta name="twitter:description" content="Explore Arpit Singh's web development projects, skills, and work in HTML, CSS, and JavaScript.">
+
+    <meta name="twitter:image" content="https://arpitsingh.free.nf/icon.png">
+
+
+
+    <!-- Stylesheets -->
+
+    <style>
+/* ============================================================
+   ARPIT SINGH — PORTFOLIO
+   Design system: "Schematic" — an engineer's blueprint sheet.
+   Dark ink-blue paper, hairline grid, amber marker annotations,
+   cyan signal traces. Built for a developer with a STEM mind.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* ---------- 1. TOKENS ---------- */
+:root {
+  /* base palette */
+  --ink: #081120;
+  --surface: #101F36;
+  --surface-2: #0C1A2C;
+  --paper: #ECEFF4;
+  --muted: #8FA0B8;
+  --signal: #FF8A4C;     /* amber — actions, CTAs, the "marker pen" */
+  --signal-rgb: 255, 138, 76;
+  --trace: #5FD9E8;      /* cyan — circuitry, data, signal lines */
+  --trace-rgb: 95, 217, 232;
+  --blue-rgb: 143, 160, 184;
+
+  --rule: rgba(var(--blue-rgb), 0.18);
+  --rule-strong: rgba(var(--blue-rgb), 0.32);
+  --grid-line: rgba(var(--blue-rgb), 0.05);
+
+  /* type */
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* layout */
+  --header-h: 4.5rem;
+  --radius: 16px;
+  --radius-sm: 8px;
+  --max: 1100px;
+  --ease: cubic-bezier(.22, .61, .36, 1);
+  --grid-size: 44px;
+}
+
+/* ---------- 2. RESET ---------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--ink);
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  background-attachment: fixed;
+  color: var(--paper);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img, video { max-width: 100%; height: auto; display: block; }
+button, input, textarea { font-family: inherit; border: none; outline: none; background: none; color: inherit; }
+
+/* visible, deliberate focus state */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--trace);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::selection { background: rgba(var(--signal-rgb), 0.35); color: var(--paper); }
+
+/* custom scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--ink); }
+::-webkit-scrollbar-thumb { background: var(--rule-strong); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--trace); }
+
+.bd-grid {
+  display: grid;
+  max-width: var(--max);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- 3. SCROLL PROGRESS ---------- */
+.progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--signal), var(--trace));
+  z-index: 1000;
+  transition: width 0.1s linear;
+}
+
+/* ---------- 4. SECTION SCAFFOLDING ---------- */
+.section { padding: 7rem 1.5rem 3rem; position: relative; }
+
+.section-eyebrow {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--trace);
+  text-align: center;
+  margin-bottom: 0.6rem;
+  opacity: 0.85;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--paper);
+  position: relative;
+  letter-spacing: -0.01em;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.9rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 3px;
+  background: var(--signal);
+  border-radius: 2px;
+}
+
+/* ---------- 5. HEADER / NAV ---------- */
+.l-header {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 100;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  transition: background var(--ease), border-color var(--ease), backdrop-filter var(--ease);
+  border-bottom: 1px solid transparent;
+}
+
+.l-header.scroll-header {
+  background: rgba(8, 17, 32, 0.78);
+  backdrop-filter: blur(14px) saturate(140%);
+  border-bottom: 1px solid var(--rule);
+}
+
+.nav {
+  max-width: var(--max);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--paper);
+  letter-spacing: -0.01em;
+}
+
+.nav__logo::after {
+  content: '_';
+  color: var(--signal);
+  animation: blink 1.1s steps(2) infinite;
+}
+
+.nav__list { display: flex; gap: 2.1rem; }
+
+.nav__link {
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  padding-bottom: 0.4rem;
+  transition: color var(--ease);
+}
+
+.nav__link::before {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--signal);
+  transition: width var(--ease);
+  border-radius: 2px;
+}
+
+.nav__link:hover { color: var(--paper); }
+.nav__link:hover::before { width: 100%; }
+
+.nav__link.active-link { color: var(--signal); }
+.nav__link.active-link::before { width: 100%; background: var(--signal); }
+
+.nav__toggle {
+  display: none;
+  font-size: 1.4rem;
+  color: var(--paper);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    position: fixed;
+    top: var(--header-h);
+    right: -100%;
+    width: 70%;
+    height: calc(100vh - var(--header-h));
+    background: var(--surface);
+    border-left: 1px solid var(--rule);
+    padding: 2.5rem 0;
+    transition: right 0.4s var(--ease);
+  }
+  .nav__menu.show-menu { right: 0; }
+  .nav__list { flex-direction: column; align-items: center; gap: 2rem; }
+  .nav__toggle { display: block; }
+}
+
+/* ---------- 6. HOME / HERO ---------- */
+.home {
+  min-height: 100vh;
+  grid-template-rows: 1fr max-content;
+  row-gap: 2rem;
+  align-content: center;
+  justify-items: center;
+  padding-top: var(--header-h);
+  position: relative;
+  max-width: var(--max);
+  text-align: center;
+}
+
+.home__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  background: rgba(16, 31, 54, 0.5);
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  margin-bottom: 1.4rem;
+  width: max-content;
+  opacity: 0;
+  animation: fadeUp 0.7s var(--ease) 0.1s forwards;
+}
+
+.home__badge-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #6CF2A1;
+  box-shadow: 0 0 0 0 rgba(108, 242, 161, 0.6);
+  animation: pulseDot 1.8s infinite;
+}
+
+.home__data {
+  align-self: center;
+  justify-self: center;
+  padding: 1.5rem 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.home__hero-stage {
+  width: 100%;
+  perspective: 900px;
+  padding: 1rem 0 1.4rem;
+}
+
+.home__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 7.5vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.22;
+  color: var(--paper);
+  letter-spacing: -0.01em;
+}
+
+.hero-line {
+  display: block;
+  min-height: 1.22em;
+}
+
+.hero-line--name { color: var(--signal); }
+
+.hero-line--role {
+  color: var(--trace);
+  font-family: var(--font-mono);
+  font-size: 0.62em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.hero-line.is-typing::after {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 0.85em;
+  margin-left: 3px;
+  background: currentColor;
+  vertical-align: -0.08em;
+  animation: heroCaretBlink 0.85s steps(1) infinite;
+}
+
+.hero-line .char {
+  display: inline-block;
+  white-space: pre;
+  will-change: transform, opacity, filter;
+}
+
+/* mode 2 — 3D flip */
+.char.flip-in {
+  opacity: 0;
+  transform: translateY(30px) rotateX(75deg) scale(0.5);
+  filter: blur(6px);
+  animation: heroFlipIn 0.5s cubic-bezier(.2, .8, .2, 1) forwards;
+}
+.char.flip-out { animation: heroFlipOut 0.4s ease forwards; }
+
+/* mode 3 — glitch / scramble */
+.char.glitch-char.scrambling {
+  color: var(--trace);
+  text-shadow: 0 0 8px rgba(var(--trace-rgb), 0.55);
+}
+.char.glitch-char.locked {
+  color: inherit;
+  text-shadow: none;
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+.char.glitch-out {
+  opacity: 0;
+  filter: blur(4px);
+  transform: translateY(6px);
+  transition: opacity 0.35s ease, filter 0.35s ease, transform 0.35s ease;
+}
+
+/* mode 4 — wave shimmer */
+.char.wave-in {
+  opacity: 0;
+  transform: translateY(18px) scale(0.85);
+  animation: heroWaveIn 0.5s ease forwards;
+}
+.char.wave-bob {
+  animation: heroBob 1.7s ease-in-out infinite;
+  animation-delay: var(--bob-delay, 0s);
+}
+.char.wave-out { animation: heroWaveOut 0.4s ease forwards; }
+
+.home__social {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1.1rem;
+  padding: 0.5rem 1.5rem 0;
+}
+
+.home__social-icon {
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  transition: all var(--ease);
+  opacity: 0;
+  animation: fadeUp 0.6s var(--ease) forwards;
+}
+.home__social-icon:nth-child(1) { animation-delay: 0.45s; }
+.home__social-icon:nth-child(2) { animation-delay: 0.55s; }
+.home__social-icon:nth-child(3) { animation-delay: 0.65s; }
+.home__social-icon:nth-child(4) { animation-delay: 0.75s; }
+
+.home__social-icon:hover {
+  color: var(--ink);
+  background: var(--trace);
+  border-color: var(--trace);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(var(--trace-rgb), 0.3);
+}
+
+/* CTA button */
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--signal);
+  color: #1B0E04;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow: 0 10px 26px rgba(var(--signal-rgb), 0.28);
+  transition: transform var(--ease), box-shadow var(--ease);
+  opacity: 0;
+  animation: fadeUp 0.7s var(--ease) 0.85s forwards;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.55), transparent);
+  transform: translateX(-120%) skewX(-15deg);
+  transition: transform 0.6s var(--ease);
+  z-index: -1;
+}
+
+.button:hover::before { transform: translateX(120%) skewX(-15deg); }
+.button:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 14px 30px rgba(var(--signal-rgb), 0.4); }
+.button:active { transform: translateY(0) scale(0.98); }
+
+/* hero CTA row: holds the Instagram + Website buttons side by side */
+.home__cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+/* secondary CTA — outlined variant so it reads as a companion link, not a duplicate */
+.button--website {
+  background: transparent;
+  color: var(--trace);
+  box-shadow: none;
+  border: 1px solid var(--rule-strong);
+}
+
+.button--website:hover {
+  box-shadow: 0 14px 30px rgba(var(--trace-rgb), 0.25);
+  border-color: var(--trace);
+}
+
+/* ---------- 7. ABOUT ---------- */
+.about__container {
+  grid-template-columns: 1fr;
+  row-gap: 2.5rem;
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.about__img {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--rule);
+  padding: 6px;
+  position: relative;
+  background: var(--surface);
+}
+
+.about__img::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px dashed var(--trace);
+  opacity: 0.5;
+  animation: spin 16s linear infinite;
+}
+
+.about__img img { border-radius: 50%; width: 100%; height: 100%; object-fit: cover; }
+
+.about__subtitle {
+  font-family: var(--font-mono);
+  color: var(--trace);
+  letter-spacing: 0.08em;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.about__text { color: var(--muted); font-size: 0.98rem; }
+
+/* ---------- 8. SKILLS ---------- */
+.skills__container { grid-template-columns: 1fr; row-gap: 2.5rem; }
+
+.skills__subtitle {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
+}
+
+.skills__text { color: var(--muted); margin-bottom: 1.8rem; font-size: 0.95rem; }
+
+.skills__data {
+  display: grid;
+  grid-template-columns: 110px 1fr 50px;
+  align-items: center;
+  column-gap: 1rem;
+  margin-bottom: 1.4rem;
+}
+
+.skills__names { display: flex; align-items: center; column-gap: 0.5rem; }
+
+.skills__icon { font-size: 1.3rem; color: var(--signal); }
+
+.skills__name { font-family: var(--font-mono); font-size: 0.85rem; color: var(--paper); }
+
+.skills__bar {
+  position: relative;
+  height: 6px;
+  background: var(--rule);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skills__bar::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 0%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--trace), var(--signal));
+  box-shadow: 0 0 14px rgba(var(--trace-rgb), 0.5);
+  transition: width 1.4s var(--ease);
+}
+
+.skills__bar.in-view::after { width: var(--fill, 0%); }
+
+.skills__percentage {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-align: right;
+}
+
+.skills__img { width: 100%; max-width: 260px; margin: 0 auto; opacity: 0.9; filter: drop-shadow(0 10px 30px rgba(var(--trace-rgb),0.18)); }
+
+/* ---------- 9. WORK / PHOTOS ---------- */
+.work__container {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.6rem;
+}
+
+.work__img {
+  position: relative;
+  display: block;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  background: var(--surface);
+  cursor: pointer;
+  transition: transform var(--ease), border-color var(--ease), box-shadow var(--ease);
+}
+
+.work__img:hover {
+  transform: translateY(-6px) !important;
+  border-color: var(--trace);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(var(--trace-rgb), 0.25);
+}
+
+.work__video { width: 100%; height: 100%; aspect-ratio: 9/16; object-fit: cover; display: block; }
+
+.work__status {
+  position: absolute;
+  inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(8, 17, 32, 0.35);
+  color: var(--paper);
+  font-size: 2.4rem;
+  opacity: 1;
+  transition: all var(--ease);
+}
+
+.work__status i { filter: drop-shadow(0 4px 14px rgba(0,0,0,0.5)); }
+
+.work__img.is-playing .work__status {
+  background: transparent;
+  opacity: 0;
+}
+
+.work__img.is-playing:hover .work__status {
+  opacity: 1;
+  background: rgba(8, 17, 32, 0.35);
+}
+
+.work__img:hover .work__status { border-color: var(--trace); color: var(--trace); }
+
+/* ---------- 9b. PROJECTS ---------- */
+.projects__intro {
+  text-align: center;
+  color: var(--muted);
+  max-width: 620px;
+  margin: -2rem auto 3rem;
+  font-size: 0.95rem;
+}
+
+.projects__container {
+  grid-template-columns: 1fr;
+  gap: 1.8rem;
+}
+
+.project__card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  transition: transform var(--ease), border-color var(--ease), box-shadow var(--ease);
+}
+
+.project__card::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px dashed var(--rule-strong);
+  border-radius: calc(var(--radius) - 8px);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.project__card:hover {
+  transform: translateY(-6px);
+  border-color: var(--trace);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(var(--trace-rgb), 0.2);
+}
+
+.project__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.project__icon { font-size: 1.6rem; color: var(--signal); }
+
+.project__tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--trace);
+  border: 1px solid var(--rule-strong);
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.project__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.7rem;
+  color: var(--paper);
+}
+
+.project__text {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin-bottom: 1.1rem;
+}
+
+.project__steps {
+  list-style: decimal;
+  padding-left: 1.2rem;
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  display: grid;
+  row-gap: 0.45rem;
+  margin-bottom: 1.4rem;
+}
+
+.project__steps li::marker { color: var(--signal); }
+
+.project__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--trace);
+  padding: 0.65rem 1.2rem;
+  border-radius: 999px;
+  transition: transform var(--ease), box-shadow var(--ease);
+}
+
+.project__link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(var(--trace-rgb), 0.35);
+}
+
+/* ---------- 10. CONTACT ---------- */
+.contact__container { grid-template-columns: 1fr; max-width: 540px; margin: 0 auto; width: 100%; }
+
+.contact__form { display: grid; row-gap: 1.1rem; }
+
+.contact__input {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  padding: 0.95rem 1.1rem;
+  font-size: 0.95rem;
+  color: var(--paper);
+  transition: border-color var(--ease), box-shadow var(--ease);
+}
+
+.contact__input::placeholder { color: var(--muted); }
+
+.contact__input:focus {
+  border-color: var(--trace);
+  box-shadow: 0 0 0 3px rgba(var(--trace-rgb), 0.12);
+}
+
+.contact__button {
+  justify-self: start;
+  cursor: pointer;
+  border: none;
+}
+
+.contact__status {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  margin-top: 0.6rem;
+  min-height: 1.2rem;
+  color: var(--trace);
+}
+
+.contact__status.is-error { color: #FF6B6B; }
+
+/* ---------- 11. FOOTER ---------- */
+.footer {
+  background: var(--surface-2);
+  border-top: 1px solid var(--rule);
+  padding: 2.5rem 1.5rem 1.5rem;
+  text-align: center;
+}
+
+.footer__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.footer__social { display: flex; justify-content: center; gap: 1.2rem; margin-bottom: 1.5rem; }
+
+.footer__icon {
+  width: 38px; height: 38px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 1.1rem;
+  transition: all var(--ease);
+}
+
+.footer__icon:hover { color: var(--ink); background: var(--signal); border-color: var(--signal); transform: translateY(-3px); }
+
+.footer__copy { font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted); }
+.footer__legal { margin-top: 0.6rem; font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted); display: flex; justify-content: center; gap: 0.5rem; }
+.footer__legal a { color: var(--muted); transition: color var(--ease); }
+.footer__legal a:hover { color: var(--trace); }
+
+/* ---------- 11b. CONTACT SUCCESS POPUP ---------- */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 17, 32, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1200;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s var(--ease), visibility 0.3s var(--ease);
+  padding: 1.5rem;
+}
+
+.popup-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-box {
+  background: var(--surface);
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius);
+  padding: 2rem 2.2rem;
+  max-width: 360px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  transform: translateY(14px) scale(0.96);
+  transition: transform 0.35s var(--ease);
+}
+
+.popup-overlay.show .popup-box {
+  transform: translateY(0) scale(1);
+}
+
+.popup-icon {
+  font-size: 2.6rem;
+  color: #6CF2A1;
+  margin-bottom: 0.6rem;
+  display: inline-block;
+}
+
+.popup-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: var(--paper);
+}
+
+.popup-text {
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+/* ---------- 12. BACK TO TOP ---------- */
+.to-top {
+  position: fixed;
+  bottom: 1.8rem;
+  right: 1.8rem;
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  color: var(--paper);
+  font-size: 1.3rem;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  z-index: 90;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: all var(--ease);
+}
+
+.to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.to-top:hover { background: var(--signal); color: var(--ink); border-color: var(--signal); }
+
+/* ---------- 13. SCROLLREVEAL HELPER ---------- */
+.sr-fade { opacity: 0; }
+
+/* ---------- 14. KEYFRAMES ---------- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+@keyframes pulseDot {
+  0% { box-shadow: 0 0 0 0 rgba(108, 242, 161, 0.55); }
+  70% { box-shadow: 0 0 0 8px rgba(108, 242, 161, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(108, 242, 161, 0); }
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@keyframes heroCaretBlink { 50% { opacity: 0; } }
+
+@keyframes heroFlipIn {
+  to { opacity: 1; transform: translateY(0) rotateX(0) scale(1); filter: blur(0); }
+}
+
+@keyframes heroFlipOut {
+  to { opacity: 0; transform: translateY(-22px) rotateX(-60deg) scale(0.6); filter: blur(6px); }
+}
+
+@keyframes heroWaveIn {
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes heroWaveOut {
+  to { opacity: 0; transform: translateY(-14px) scale(0.8); filter: blur(4px); }
+}
+
+@keyframes heroBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ---------- 15. RESPONSIVE ---------- */
+@media screen and (min-width: 768px) {
+  .home__data { max-width: 720px; }
+  .home__title { font-size: clamp(3rem, 6vw, 4.6rem); }
+
+  .about__container { grid-template-columns: 220px 1fr; text-align: left; column-gap: 3rem; max-width: 760px; }
+  .about__img { margin: 0; }
+
+  .skills__container { grid-template-columns: 1fr 0.6fr; column-gap: 3rem; align-items: center; }
+
+  .contact__form { grid-template-columns: repeat(2, 1fr); column-gap: 1.1rem; }
+  .contact__form textarea, .contact__form .contact__button, .contact__status { grid-column: 1 / 3; }
+
+  .projects__container { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media screen and (min-width: 1024px) {
+  .nav { padding: 0; }
+  .section { padding: 8.5rem 0 4rem; }
+  .home__title { font-size: clamp(3.6rem, 5.2vw, 5.4rem); }
+}
+
+/* ---------- 16. REDUCED MOTION ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .home__badge, .home__social-icon, .button { opacity: 1; }
+  .hero-line .char, .hero-line.is-typing::after { opacity: 1 !important; transform: none !important; filter: none !important; animation: none !important; }
+  .skills__bar.in-view::after { width: var(--fill, 0%); }
+}
+
+/* Accessible visually-hidden utility (for form labels, etc.) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+    </style>
+
+
+
+    <!-- Box Icons: loaded non-render-blocking. preload fetches it with low
+         priority, then the onload swap flips it to a stylesheet once it's in
+         cache. The <noscript> fallback covers JS-disabled visits. -->
+
+    <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css"></noscript>
+
+
+
+    <!-- Canonical link -->
+
+    <link rel="canonical" href="https://arpitsingh.free.nf/"/>
+
+
+
+    <!-- Title -->
+
+    <title>Arpit Singh - Web Developer Portfolio in Jaunpur, UP</title>
+
+
+
+    <!-- Structured Data (JSON-LD) for Google -->
+
+    <script type="application/ld+json">
+
+    {
+
+      "@context": "https://schema.org",
+
+      "@type": "Person",
+
+      "name": "Arpit Singh",
+
+      "jobTitle": "Web Developer",
+
+      "url": "https://arpitsingh.free.nf/",
+
+      "image": "https://arpitsingh.free.nf/icon.png",
+
+      "email": "mailto:thakurarpit5999@gmail.com",
+
+      "address": {
+
+        "@type": "PostalAddress",
+
+        "addressLocality": "Jaunpur",
+
+        "addressRegion": "Uttar Pradesh",
+
+        "addressCountry": "IN"
+
+      },
+
+      "sameAs": [
+
+        "https://www.instagram.com/arpitsingh.7668/"
+
+      ],
+
+      "knowsAbout": ["HTML5", "CSS3", "JavaScript", "Web Development", "UI/UX"]
+
+    }
+
+    </script>
+
+</head>
+
+<body>
+
+
+
+    <!-- HEADER -->
+
+    <header class="l-header">
+
+        <nav class="nav bd-grid">
+
+            <div>
+
+                <a href="#home" class="nav__logo">Arpit Singh</a>
+
+            </div>
+
+
+
+            <div class="nav__menu" id="nav-menu">
+
+                <ul class="nav__list">
+
+                    <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+
+                    <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+
+                    <li class="nav__item"><a href="#work" class="nav__link">Photos</a></li>
+
+                    <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
+
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+
+                </ul>
+
+            </div>
+
+
+
+            <div class="nav__toggle" id="nav-toggle">
+
+                <i class='bx bx-menu'></i>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <main class="l-main">
+
+        <!-- HOME -->
+
+        <section class="home bd-grid" id="home" role="region" aria-label="Home Section">
+
+            <div class="home__data">
+
+                <div class="home__hero-stage" id="heroStage">
+
+                    <h1 class="home__title" id="heroTitle" aria-label="Hi, I'm Arpit Singh, Web Developer">
+
+                        <span class="hero-line" data-text="Hi, I'm">Hi, I'm</span>
+
+                        <span class="hero-line hero-line--name" data-text="Arpit Singh">Arpit Singh</span>
+
+                        <span class="hero-line hero-line--role" data-text="Web Developer">Web Developer</span>
+
+                    </h1>
+
+                </div>
+
+                <div class="home__cta">
+
+                    <a href="https://www.instagram.com/arpitsingh.7668/" class="button" target="_blank" rel="noopener noreferrer">Instagram</a>
+
+                    <a href="https://arpitsingh.free.nf/" class="button button--website" target="_blank" rel="noopener noreferrer">Website</a>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="home__social">
+
+                <a href="https://www.instagram.com/arpitsingh.7668/" class="home__social-icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+
+                <a href="https://arpitsingh.free.nf/" class="home__social-icon" target="_blank" rel="noopener noreferrer" aria-label="Website"><i class='bx bx-globe'></i></a>
+
+                <a href="mailto:thakurarpit5999@gmail.com" class="home__social-icon" aria-label="Email"><i class='bx bx-envelope'></i></a>
+
+                <a href="styles.scss" class="home__social-icon" target="_blank" rel="noopener noreferrer" aria-label="View source (SCSS)"><i class='bx bx-code'></i></a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ABOUT -->
+
+        <section class="about section" id="about" role="region" aria-label="About Section">
+
+            <h2 class="section-title">About</h2>
+
+            <div class="about__container bd-grid">
+
+                <div class="about__img">
+
+                    <img
+                        src="img/about1-300.jpg"
+                        srcset="img/about1-150.jpg 150w, img/about1-300.jpg 300w, img/about1-450.jpg 450w"
+                        sizes="150px"
+                        alt="Arpit Singh, web developer from Jaunpur, Uttar Pradesh"
+                        loading="lazy"
+                        decoding="async"
+                        width="150"
+                        height="150">
+
+                </div>
+
+                <div>
+
+                    <h3 class="about__subtitle">@ARPIT SINGH</h3>
+
+                    <p class="about__text">Hello, I'm Arpit Singh. My path to web development didn't begin simply with writing code—it started with a deep-rooted fascination for the core principles of STEM. Growing up in Jaunpur, Uttar Pradesh, I cultivated an analytical mindset that naturally evolved into a passion for computer science. Today, I leverage that foundational logic to architect and build robust, high-performing web solutions that bridge the gap between complex backend systems and seamless user experiences.</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- SKILLS -->
+
+        <section class="skills section" id="skills" role="region" aria-label="Skills Section">
+
+            <h2 class="section-title">Skills</h2>
+
+            <div class="skills__container bd-grid">
+
+                <div>
+
+                    <h3 class="skills__subtitle">Professional Skills</h3>
+
+                    <p class="skills__text">I am proficient in several key areas of web development, including front-end technologies, user interface design, and JavaScript programming.</p>
+
+                    <div class="skills__data">
+
+                        <div class="skills__names">
+
+                            <i class='bx bxl-html5 skills__icon'></i>
+
+                            <span class="skills__name">HTML5</span>
+
+                        </div>
+
+                        <div class="skills__bar skills__html"></div>
+
+                        <div>
+
+                            <span class="skills__percentage">95%</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="skills__data">
+
+                        <div class="skills__names">
+
+                            <i class='bx bxl-css3 skills__icon'></i>
+
+                            <span class="skills__name">CSS3</span>
+
+                        </div>
+
+                        <div class="skills__bar skills__css"></div>
+
+                        <div>
+
+                            <span class="skills__percentage">85%</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="skills__data">
+
+                        <div class="skills__names">
+
+                            <i class='bx bxl-javascript skills__icon'></i>
+
+                            <span class="skills__name">JavaScript</span>
+
+                        </div>
+
+                        <div class="skills__bar skills__js"></div>
+
+                        <div>
+
+                            <span class="skills__percentage">65%</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="skills__data">
+
+                        <div class="skills__names">
+
+                            <i class='bx bxs-paint skills__icon'></i>
+
+                            <span class="skills__name">UX/UI</span>
+
+                        </div>
+
+                        <div class="skills__bar skills__ux"></div>
+
+                        <div>
+
+                            <span class="skills__percentage">85%</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <img
+                        src="img/icon-260.png"
+                        srcset="img/icon-128.png 128w, img/icon-260.png 260w, img/icon-520.png 520w"
+                        sizes="(min-width: 768px) 260px, 55vw"
+                        alt="Icon representing professional skills"
+                        class="skills__img"
+                        loading="lazy"
+                        decoding="async"
+                        width="260"
+                        height="260">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- WORK -->
+
+        <section class="work section" id="work" role="region" aria-label="Work Section">
+    <h2 class="section-title">Photos</h2>
+
+    <div class="work__container bd-grid">
+
+        <a class="work__img" href="https://res.cloudinary.com/dsgzbhl88/video/upload/v1783177342/arpitsingh.7668/20_eve1ap.mp4" target="_blank" rel="noopener noreferrer" aria-label="Open Portfolio work sample video 1 in a new tab">
+            <video data-src="https://res.cloudinary.com/dsgzbhl88/video/upload/v1783177342/arpitsingh.7668/20_eve1ap.mp4" poster="https://res.cloudinary.com/dsgzbhl88/video/upload/so_0,w_480,q_auto,f_jpg/v1783177342/arpitsingh.7668/20_eve1ap.jpg" muted loop playsinline preload="none" class="work__video" aria-hidden="true" tabindex="-1"></video>
+            <div class="work__status"><i class='bx bx-play'></i></div>
+        </a>
+
+        <a class="work__img" href="https://res.cloudinary.com/dsgzbhl88/video/upload/v1783176604/arpitsingh.7668/10_qyvjtf.mp4" target="_blank" rel="noopener noreferrer" aria-label="Open Portfolio work sample video 2 in a new tab">
+            <video data-src="https://res.cloudinary.com/dsgzbhl88/video/upload/v1783176604/arpitsingh.7668/10_qyvjtf.mp4" poster="https://res.cloudinary.com/dsgzbhl88/video/upload/so_0,w_480,q_auto,f_jpg/v1783176604/arpitsingh.7668/10_qyvjtf.jpg" muted loop playsinline preload="none" class="work__video" aria-hidden="true" tabindex="-1"></video>
+            <div class="work__status"><i class='bx bx-play'></i></div>
+        </a>
+
+        <a class="work__img" href="https://res.cloudinary.com/dsgzbhl88/video/upload/v1751647514/arpitsingh9777/3_tzbqwt.mp4" target="_blank" rel="noopener noreferrer" aria-label="Open Portfolio work sample video 3 in a new tab">
+            <video data-src="https://res.cloudinary.com/dsgzbhl88/video/upload/v1751647514/arpitsingh9777/3_tzbqwt.mp4" poster="https://res.cloudinary.com/dsgzbhl88/video/upload/so_0,w_480,q_auto,f_jpg/v1751647514/arpitsingh9777/3_tzbqwt.jpg" muted loop playsinline preload="none" class="work__video" aria-hidden="true" tabindex="-1"></video>
+            <div class="work__status"><i class='bx bx-play'></i></div>
+        </a>
+         <a class="work__img" href="https://res.cloudinary.com/dsgzbhl88/video/upload/v1783176605/arpitsingh.7668/12_lluueh.mp4" target="_blank" rel="noopener noreferrer" aria-label="Open Portfolio work sample video 4 in a new tab">
+            <video data-src="https://res.cloudinary.com/dsgzbhl88/video/upload/v1783176605/arpitsingh.7668/12_lluueh.mp4" poster="https://res.cloudinary.com/dsgzbhl88/video/upload/so_0,w_480,q_auto,f_jpg/v1783176605/arpitsingh.7668/12_lluueh.jpg" muted loop playsinline preload="none" class="work__video" aria-hidden="true" tabindex="-1"></video>
+            <div class="work__status"><i class='bx bx-play'></i></div>
+        </a>
+
+         <a class="work__img" href="https://res.cloudinary.com/dsgzbhl88/video/upload/v1783176602/arpitsingh.7668/7_cgmnsi.mp4" target="_blank" rel="noopener noreferrer" aria-label="Open Portfolio work sample video 5 in a new tab">
+            <video data-src="https://res.cloudinary.com/dsgzbhl88/video/upload/v1783176602/arpitsingh.7668/7_cgmnsi.mp4" poster="https://res.cloudinary.com/dsgzbhl88/video/upload/so_0,w_480,q_auto,f_jpg/v1783176602/arpitsingh.7668/7_cgmnsi.jpg" muted loop playsinline preload="none" class="work__video" aria-hidden="true" tabindex="-1"></video>
+            <div class="work__status"><i class='bx bx-play'></i></div>
+        </a>
+
+         <a class="work__img" href="https://res.cloudinary.com/dsgzbhl88/video/upload/v1783176605/arpitsingh.7668/2_juqufe.mp4" target="_blank" rel="noopener noreferrer" aria-label="Open Portfolio work sample video 6 in a new tab">
+            <video data-src="https://res.cloudinary.com/dsgzbhl88/video/upload/v1783176605/arpitsingh.7668/2_juqufe.mp4" poster="https://res.cloudinary.com/dsgzbhl88/video/upload/so_0,w_480,q_auto,f_jpg/v1783176605/arpitsingh.7668/2_juqufe.jpg" muted loop playsinline preload="none" class="work__video" aria-hidden="true" tabindex="-1"></video>
+            <div class="work__status"><i class='bx bx-play'></i></div>
+        </a>
+
+         <a class="work__img" href="https://res.cloudinary.com/dsgzbhl88/video/upload/v1751647514/arpitsingh9777/2_mckttc.mp4" target="_blank" rel="noopener noreferrer" aria-label="Open Portfolio work sample video 7 in a new tab">
+            <video data-src="https://res.cloudinary.com/dsgzbhl88/video/upload/v1751647514/arpitsingh9777/2_mckttc.mp4" poster="https://res.cloudinary.com/dsgzbhl88/video/upload/so_0,w_480,q_auto,f_jpg/v1751647514/arpitsingh9777/2_mckttc.jpg" muted loop playsinline preload="none" class="work__video" aria-hidden="true" tabindex="-1"></video>
+            <div class="work__status"><i class='bx bx-play'></i></div>
+        </a>
+
+
+         <a class="work__img" href="https://res.cloudinary.com/dsgzbhl88/video/upload/v1783176604/arpitsingh.7668/11_taqvq0.mp4" target="_blank" rel="noopener noreferrer" aria-label="Open Portfolio work sample video 8 in a new tab">
+            <video data-src="https://res.cloudinary.com/dsgzbhl88/video/upload/v1783176604/arpitsingh.7668/11_taqvq0.mp4" poster="https://res.cloudinary.com/dsgzbhl88/video/upload/so_0,w_480,q_auto,f_jpg/v1783176604/arpitsingh.7668/11_taqvq0.jpg" muted loop playsinline preload="none" class="work__video" aria-hidden="true" tabindex="-1"></video>
+            <div class="work__status"><i class='bx bx-play'></i></div>
+        </a>
+
+
+         <a class="work__img" href="https://res.cloudinary.com/dsgzbhl88/video/upload/v1783176603/arpitsingh.7668/9_trp2lr.mp4" target="_blank" rel="noopener noreferrer" aria-label="Open Portfolio work sample video 9 in a new tab">
+            <video data-src="https://res.cloudinary.com/dsgzbhl88/video/upload/v1783176603/arpitsingh.7668/9_trp2lr.mp4" poster="https://res.cloudinary.com/dsgzbhl88/video/upload/so_0,w_480,q_auto,f_jpg/v1783176603/arpitsingh.7668/9_trp2lr.jpg" muted loop playsinline preload="none" class="work__video" aria-hidden="true" tabindex="-1"></video>
+            <div class="work__status"><i class='bx bx-play'></i></div>
+        </a>
+
+
+         <a class="work__img" href="https://res.cloudinary.com/dsgzbhl88/video/upload/v1783176602/arpitsingh.7668/1_okvwz7.mp4" target="_blank" rel="noopener noreferrer" aria-label="Open Portfolio work sample video 10 in a new tab">
+            <video data-src="https://res.cloudinary.com/dsgzbhl88/video/upload/v1783176602/arpitsingh.7668/1_okvwz7.mp4" poster="https://res.cloudinary.com/dsgzbhl88/video/upload/so_0,w_480,q_auto,f_jpg/v1783176602/arpitsingh.7668/1_okvwz7.jpg" muted loop playsinline preload="none" class="work__video" aria-hidden="true" tabindex="-1"></video>
+            <div class="work__status"><i class='bx bx-play'></i></div>
+        </a>
+
+
+         <a class="work__img" href="https://res.cloudinary.com/dsgzbhl88/video/upload/v1783176602/arpitsingh.7668/6_bu7elt.mp4" target="_blank" rel="noopener noreferrer" aria-label="Open Portfolio work sample video 11 in a new tab">
+            <video data-src="https://res.cloudinary.com/dsgzbhl88/video/upload/v1783176602/arpitsingh.7668/6_bu7elt.mp4" poster="https://res.cloudinary.com/dsgzbhl88/video/upload/so_0,w_480,q_auto,f_jpg/v1783176602/arpitsingh.7668/6_bu7elt.jpg" muted loop playsinline preload="none" class="work__video" aria-hidden="true" tabindex="-1"></video>
+            <div class="work__status"><i class='bx bx-play'></i></div>
+        </a>
+
+
+
+         <a class="work__img" href="https://res.cloudinary.com/dsgzbhl88/video/upload/v1783176602/arpitsingh.7668/3_igsmb3.mp4" target="_blank" rel="noopener noreferrer" aria-label="Open Portfolio work sample video 12 in a new tab">
+            <video data-src="https://res.cloudinary.com/dsgzbhl88/video/upload/v1783176602/arpitsingh.7668/3_igsmb3.mp4" poster="https://res.cloudinary.com/dsgzbhl88/video/upload/so_0,w_480,q_auto,f_jpg/v1783176602/arpitsingh.7668/3_igsmb3.jpg" muted loop playsinline preload="none" class="work__video" aria-hidden="true" tabindex="-1"></video>
+            <div class="work__status"><i class='bx bx-play'></i></div>
+        </a>
+
+        
+
+
+
+
+
+    </div>
+</section>
+
+
+        <!-- PROJECTS -->
+
+        <section class="projects section" id="projects" role="region" aria-label="Projects Section">
+
+            <h2 class="section-title">Projects</h2>
+
+            <p class="projects__intro">Two experiments in peer-to-peer web tech — no backend server ever sits between the two devices.</p>
+
+            <div class="projects__container bd-grid">
+
+                <article class="project__card">
+
+                    <div class="project__head">
+
+                        <i class='bx bx-chat project__icon'></i>
+
+                        <span class="project__tag">P2P &middot; NO SERVER</span>
+
+                    </div>
+
+                    <h3 class="project__title">Serverless Chat</h3>
+
+                    <p class="project__text">A real-time chat that never touches a server. No sign-up and no phone number needed — messages travel directly from one device to another over a live peer-to-peer connection.</p>
+
+                    <ol class="project__steps">
+
+                        <li>Generate a secret code</li>
+
+                        <li>Share the code with the other person</li>
+
+                        <li>Everyone with that code joins the same chat instantly</li>
+
+                    </ol>
+
+                    <a href="https://arpitsingh.free.nf" class="project__link">Open Chat <i class='bx bx-link-external'></i></a>
+
+                </article>
+
+                <article class="project__card">
+
+                    <div class="project__head">
+
+                        <i class='bx bx-send project__icon'></i>
+
+                        <span class="project__tag">P2P &middot; NO SERVER</span>
+
+                    </div>
+
+                    <h3 class="project__title">Serverless File Transfer</h3>
+
+                    <p class="project__text">Send a file from any device to any device — phone, laptop, whatever you have — without it ever passing through a server. Upload it, get a unique code, and the transfer connects the two devices directly.</p>
+
+                    <ol class="project__steps">
+
+                        <li>Upload the file you want to send</li>
+
+                        <li>Get a unique code for that transfer</li>
+
+                        <li>Share the code — the file streams straight to them</li>
+
+                    </ol>
+
+                    <a href="https://arpitsingh9777.free.nf/" class="project__link">Open File Transfer <i class='bx bx-link-external'></i></a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT -->
+
+        <section class="contact section" id="contact" role="region" aria-label="Contact Section">
+
+            <h2 class="section-title">Contact</h2>
+
+            <div class="contact__container bd-grid">
+
+                <form action="https://formspree.io/f/xjkbkopr" method="POST" class="contact__form">
+
+                    <label for="contact-name" class="sr-only">Name</label>
+
+                    <input type="text" id="contact-name" name="name" placeholder="Name" class="contact__input" required>
+
+                    <label for="contact-email" class="sr-only">Email</label>
+
+                    <input type="email" id="contact-email" name="email" placeholder="Email" class="contact__input" required>
+
+                    <label for="contact-message" class="sr-only">Message</label>
+
+                    <textarea name="message" id="contact-message" rows="10" class="contact__input" required></textarea>
+
+                    <input type="submit" value="Send" class="contact__button button">
+
+                    <p id="contactStatus" class="contact__status" role="status" aria-live="polite"></p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- CONTACT SUCCESS POPUP -->
+
+    <div class="popup-overlay" id="popupOverlay">
+
+        <div class="popup-box" role="alertdialog" aria-live="polite">
+
+            <i class='bx bx-check-circle popup-icon'></i>
+
+            <h3 class="popup-title">Congratulations!</h3>
+
+            <p class="popup-text">Your message has been sent. You'll get a reply soon.</p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer" role="contentinfo" aria-label="Footer">
+
+        <p class="footer__title">Arpit Singh</p>
+
+        <div class="footer__social">
+
+            <a href="https://www.instagram.com/arpitsingh.7668/" class="footer__icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+
+            <a href="https://arpitsingh.free.nf/" class="footer__icon" target="_blank" rel="noopener noreferrer" aria-label="Website"><i class='bx bx-globe'></i></a>
+
+            <a href="#home" class="footer__icon" aria-label="Back to top"><i class='bx bx-home'></i></a>
+
+            <a href="mailto:thakurarpit5999@gmail.com" class="footer__icon" aria-label="Email"><i class='bx bx-envelope'></i></a>
+
+        </div>
+
+        <p class="footer__copy">&#169; Arpit Singh. All rights reserved</p>
+
+        <p class="footer__legal">
+            <a href="terms.html">Terms of Use</a>
+            <span aria-hidden="true">&middot;</span>
+            <a href="privacy.html">Privacy Policy</a>
+        </p>
+
+    </footer>
+
+
+
+    <!-- SCRIPTS -->
+
+    <script src="https://unpkg.com/scrollreveal" defer></script>
+
+    <script>
+/* ============================================================
+   ARPIT SINGH — PORTFOLIO  |  main.js
+   ============================================================ */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* ---------- 0. RELEASE ENTRANCE ANIMATIONS ----------
+     Once the load-in keyframe finishes, clear it so later hover
+     states and JS-driven transforms (magnetic button, icon lift)
+     aren't fighting the animation's filled end-state. */
+  document.querySelectorAll('.home__social-icon, .button').forEach(el => {
+    el.addEventListener('animationend', () => {
+      el.style.animation = 'none';
+      el.style.opacity = '1';
+    }, { once: true });
+  });
+
+  /* ---------- 1. MOBILE NAV TOGGLE ---------- */
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('show-menu');
+    });
+  }
+
+  // close mobile menu when a link is clicked
+  document.querySelectorAll('.nav__link').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu && navMenu.classList.remove('show-menu');
+    });
+  });
+
+  /* ---------- 2. HEADER STATE + SCROLL PROGRESS + SCROLLSPY + BACK-TO-TOP ----------
+     Perf notes:
+     - Scroll events can fire dozens of times per second, so the actual
+       work is done inside a single requestAnimationFrame tick instead
+       of once per event ("rAF throttling"). This keeps scroll handling
+       to at most one layout/style pass per rendered frame.
+     - Section offsets used to be re-read with offsetTop on every scroll
+       tick, which forces the browser to recalculate layout ("layout
+       thrashing"). They're now cached once and only recomputed on
+       resize/load, when the layout can actually change. */
+  const header = document.querySelector('.l-header');
+  const progressBar = document.getElementById('progressBar');
+  const toTopBtn = document.getElementById('toTop');
+  const sections = document.querySelectorAll('main section[id]');
+  const navLinks = document.querySelectorAll('.nav__link');
+
+  let sectionOffsets = [];
+  const cacheSectionOffsets = () => {
+    sectionOffsets = Array.from(sections).map(section => ({
+      id: section.getAttribute('id'),
+      top: section.offsetTop - 120
+    }));
+  };
+  cacheSectionOffsets();
+
+  let scrollTicking = false;
+
+  const applyScrollState = () => {
+    const scrollY = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+    // header background
+    if (header) header.classList.toggle('scroll-header', scrollY > 60);
+
+    // progress bar
+    if (progressBar && docHeight > 0) {
+      progressBar.style.width = `${(scrollY / docHeight) * 100}%`;
+    }
+
+    // back to top visibility
+    if (toTopBtn) toTopBtn.classList.toggle('show', scrollY > 480);
+
+    // scrollspy (uses cached offsets — no layout read here)
+    let current = '';
+    sectionOffsets.forEach(({ id, top }) => {
+      if (scrollY >= top) current = id;
+    });
+
+    navLinks.forEach(link => {
+      link.classList.toggle('active-link', link.getAttribute('href') === `#${current}`);
+    });
+
+    scrollTicking = false;
+  };
+
+  const onScroll = () => {
+    if (!scrollTicking) {
+      scrollTicking = true;
+      requestAnimationFrame(applyScrollState);
+    }
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // re-cache section offsets when layout can change; debounced so
+  // rapid resize events don't trigger repeated layout reads
+  let resizeTimer = null;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(cacheSectionOffsets, 150);
+  }, { passive: true });
+
+  applyScrollState();
+
+  if (toTopBtn) {
+    toTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  /* ---------- 3. HERO TEXT — CYCLING SHOWCASE ANIMATIONS ----------
+     The hero title ("Hi, I'm Arpit Singh / Web Developer") is the whole
+     visual centerpiece of the home page. It loops forever through four
+     distinct animation styles, each rebuilding the text a different way:
+       1. Typewriter  — typed in / backspaced out, line by line
+       2. Flip3D      — every letter flips up out of a 3D rotation
+       3. Glitch      — letters scramble through random characters, then lock
+       4. Wave        — letters fade/scale in, then gently bob in a wave
+     Respects prefers-reduced-motion by rendering the plain text once. */
+  const heroLines = Array.from(document.querySelectorAll('.hero-line'));
+
+  if (heroLines.length) {
+    const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reduceMotion) {
+      heroLines.forEach((el) => { el.textContent = el.dataset.text || ''; });
+    } else {
+      const clearLine = (el) => { el.innerHTML = ''; el.classList.remove('is-typing'); };
+
+      const buildChars = (el, text) => {
+        clearLine(el);
+        const frag = document.createDocumentFragment();
+        [...text].forEach((ch) => {
+          const span = document.createElement('span');
+          span.className = 'char';
+          span.textContent = ch === ' ' ? '\u00A0' : ch;
+          frag.appendChild(span);
+        });
+        el.appendChild(frag);
+        return Array.from(el.children);
+      };
+
+      const allLineChars = () => heroLines.flatMap((el) => Array.from(el.querySelectorAll('.char')));
+
+      // ---- Mode 1: Typewriter ----
+      const playTypewriter = async () => {
+        for (const el of heroLines) {
+          clearLine(el);
+          el.classList.add('is-typing');
+          const text = el.dataset.text || '';
+          const frag = document.createDocumentFragment();
+          for (const ch of text) {
+            const span = document.createElement('span');
+            span.className = 'char';
+            span.textContent = ch === ' ' ? '\u00A0' : ch;
+            el.appendChild(span);
+            await wait(42);
+          }
+          el.classList.remove('is-typing');
+          await wait(180);
+        }
+        await wait(1500);
+        for (let i = heroLines.length - 1; i >= 0; i -= 1) {
+          const el = heroLines[i];
+          el.classList.add('is-typing');
+          while (el.children.length) {
+            el.removeChild(el.lastChild);
+            await wait(22);
+          }
+          el.classList.remove('is-typing');
+        }
+        await wait(200);
+      };
+
+      // ---- Mode 2: 3D flip ----
+      const playFlip = async () => {
+        heroLines.forEach((el) => buildChars(el, el.dataset.text || ''));
+        const chars = allLineChars();
+        chars.forEach((span, i) => {
+          span.style.animationDelay = `${i * 0.035}s`;
+          span.classList.add('flip-in');
+        });
+        await wait(chars.length * 35 + 650);
+        await wait(1300);
+        chars.forEach((span, i) => {
+          span.style.animationDelay = `${(chars.length - 1 - i) * 0.02}s`;
+          span.classList.remove('flip-in');
+          span.classList.add('flip-out');
+        });
+        await wait(chars.length * 20 + 550);
+      };
+
+      // ---- Mode 3: Glitch / scramble ----
+      // Perf note: previously each character ran its own setInterval,
+      // so a full line could spin up 20-30 concurrent timers at once.
+      // This now drives every character from a single interval "ticker",
+      // which is lighter on the main thread and easier for the browser
+      // to batch into one paint per tick.
+      const GLITCH_CHARS = '!<>-_\\/[]{}=+*^#$%&01';
+      const TICK_MS = 34;
+
+      const runGlitchTicker = (chars) => new Promise((resolve) => {
+        const state = chars.map((span, i) => ({
+          span,
+          final: span.dataset.final,
+          startTick: Math.round((i * 32) / TICK_MS),
+          ticksRemaining: 7,
+          started: false,
+          done: span.dataset.final === '\u00A0' || span.dataset.final === ' '
+        }));
+        if (state.every((s) => s.done)) { resolve(); return; }
+
+        let tick = 0;
+        const iv = setInterval(() => {
+          tick += 1;
+          let allDone = true;
+
+          state.forEach((s) => {
+            if (s.done) return;
+            if (tick < s.startTick) { allDone = false; return; }
+
+            s.started = true;
+            s.ticksRemaining -= 1;
+
+            if (s.ticksRemaining <= 0) {
+              s.span.textContent = s.final;
+              s.span.classList.remove('scrambling');
+              s.span.classList.add('locked');
+              s.done = true;
+            } else {
+              s.span.textContent = GLITCH_CHARS[Math.floor(Math.random() * GLITCH_CHARS.length)];
+              allDone = false;
+            }
+          });
+
+          if (allDone) {
+            clearInterval(iv);
+            resolve();
+          }
+        }, TICK_MS);
+      });
+
+      const playGlitch = async () => {
+        const chars = [];
+        heroLines.forEach((el) => {
+          clearLine(el);
+          const text = el.dataset.text || '';
+          [...text].forEach((ch) => {
+            const span = document.createElement('span');
+            const display = ch === ' ' ? '\u00A0' : ch;
+            span.className = 'char glitch-char scrambling';
+            span.dataset.final = display;
+            span.textContent = display;
+            el.appendChild(span);
+            chars.push(span);
+          });
+        });
+        await runGlitchTicker(chars);
+        await wait(1400);
+        chars.forEach((span, i) => {
+          span.style.transitionDelay = `${i * 14}ms`;
+          span.classList.add('glitch-out');
+        });
+        await wait(chars.length * 14 + 500);
+      };
+
+      // ---- Mode 4: Wave shimmer ----
+      const playWave = async () => {
+        heroLines.forEach((el) => buildChars(el, el.dataset.text || ''));
+        const chars = allLineChars();
+        chars.forEach((span, i) => {
+          span.style.animationDelay = `${i * 0.03}s`;
+          span.classList.add('wave-in');
+        });
+        await wait(chars.length * 30 + 500);
+        chars.forEach((span, i) => {
+          span.classList.remove('wave-in');
+          span.style.setProperty('--bob-delay', `${i * 0.06}s`);
+          span.classList.add('wave-bob');
+        });
+        await wait(2100);
+        chars.forEach((span, i) => {
+          span.classList.remove('wave-bob');
+          span.style.animationDelay = `${i * 0.018}s`;
+          span.classList.add('wave-out');
+        });
+        await wait(chars.length * 18 + 500);
+      };
+
+      const heroModes = [playTypewriter, playFlip, playGlitch, playWave];
+      let heroModeIndex = 0;
+
+      // Perf note: the hero loop keeps animating even when the hero
+      // section is scrolled out of view. It now pauses itself while the
+      // hero stage isn't visible (tab hidden, or scrolled off-screen)
+      // and resumes when it comes back, so it doesn't burn CPU/battery
+      // for an animation nobody's watching.
+      let heroPaused = document.hidden;
+      let heroVisible = true;
+      const heroStage = document.getElementById('heroStage');
+
+      const waitWhilePaused = async () => {
+        while (heroPaused || !heroVisible) {
+          await wait(200);
+        }
+      };
+
+      document.addEventListener('visibilitychange', () => {
+        heroPaused = document.hidden;
+      });
+
+      if (heroStage && 'IntersectionObserver' in window) {
+        const heroObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => { heroVisible = entry.isIntersecting; });
+        }, { threshold: 0.1 });
+        heroObserver.observe(heroStage);
+      }
+
+      const heroLoop = async () => {
+        // eslint-disable-next-line no-constant-condition
+        while (true) {
+          await waitWhilePaused();
+          try {
+            await heroModes[heroModeIndex]();
+          } catch (err) {
+            /* if something goes wrong mid-animation, just move on */
+          }
+          heroLines.forEach(clearLine);
+          await wait(350);
+          heroModeIndex = (heroModeIndex + 1) % heroModes.length;
+        }
+      };
+
+      heroLoop();
+    }
+  }
+
+  /* ---------- 4. SKILLS BARS — ANIMATE ON SCROLL INTO VIEW ---------- */
+  const skillBars = document.querySelectorAll('.skills__bar');
+
+  if (skillBars.length) {
+    const barObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const bar = entry.target;
+          const pct = bar.dataset.percentage || '0';
+          bar.style.setProperty('--fill', `${pct}%`);
+          bar.classList.add('in-view');
+          barObserver.unobserve(bar);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    skillBars.forEach(bar => barObserver.observe(bar));
+  }
+
+  /* ---------- 5. WORK VIDEOS — LAZY-LOADED, CLICK TO PLAY (WITH SOUND) ----------
+     Each <video> ships with no `src` and preload="none" — only a poster
+     image (a Cloudinary-generated frame) loads on page load, so 12 mp4s
+     don't hit the network payload until they're actually needed:
+       - The real `src` (from data-src) is only assigned once the card
+         scrolls near the viewport (IntersectionObserver, 300px margin),
+         so scrolling past isn't required to trigger it but a page load
+         alone never fetches any video bytes.
+       - Playback (with sound) still only starts on click, same as before.
+     Starting one video pauses any other that's currently playing, so
+     only one plays (with audio) at a time. The <a> wrapper carries a
+     real href straight to the mp4, so the link is crawlable and works
+     with JS disabled; the click handler intercepts it to play inline
+     instead of navigating away. */
+  const workCards = Array.from(document.querySelectorAll('.work__img'));
+
+  const loadVideoSrc = (video) => {
+    if (video.src || !video.dataset.src) return;
+    video.src = video.dataset.src;
+  };
+
+  if ('IntersectionObserver' in window) {
+    const lazyVideoObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const video = entry.target.querySelector('.work__video');
+        if (video) loadVideoSrc(video);
+        lazyVideoObserver.unobserve(entry.target);
+      });
+    }, { rootMargin: '300px 0px' });
+
+    workCards.forEach((card) => lazyVideoObserver.observe(card));
+  } else {
+    // no IntersectionObserver support: fall back to loading eagerly
+    workCards.forEach((card) => {
+      const video = card.querySelector('.work__video');
+      if (video) loadVideoSrc(video);
+    });
+  }
+
+  workCards.forEach(card => {
+    const video = card.querySelector('.work__video');
+    const statusIcon = card.querySelector('.work__status i');
+    if (!video) return;
+
+    // guarantee paused/silent starting state regardless of markup
+    video.loop = true;
+    video.playsInline = true;
+    video.autoplay = false;
+
+    const syncState = () => {
+      card.classList.toggle('is-playing', !video.paused);
+      if (statusIcon) statusIcon.className = video.paused ? 'bx bx-play' : 'bx bx-pause';
+    };
+
+    video.addEventListener('play', syncState);
+    video.addEventListener('pause', syncState);
+    syncState();
+
+    card.addEventListener('click', (e) => {
+      e.preventDefault(); // <a> wrapper: stop it from navigating away, play inline instead
+
+      loadVideoSrc(video); // in case the click lands before the observer fired
+
+      if (video.paused) {
+        // pause every other video first so only one plays (with sound) at a time
+        workCards.forEach(other => {
+          if (other === card) return;
+          const otherVideo = other.querySelector('.work__video');
+          if (otherVideo && !otherVideo.paused) otherVideo.pause();
+        });
+
+        video.muted = false;
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
+  });
+
+  /* ---------- 6. MAGNETIC HOVER FOR PRIMARY BUTTONS ----------
+     Perf note: mousemove can fire 60-120+ times per second. The
+     transform update is now rAF-throttled per button (at most one
+     style write per rendered frame instead of one per raw event). */
+  document.querySelectorAll('.button').forEach(btn => {
+    let magneticTicking = false;
+    let lastEvent = null;
+
+    btn.addEventListener('mousemove', (e) => {
+      lastEvent = e;
+      if (!magneticTicking) {
+        magneticTicking = true;
+        requestAnimationFrame(() => {
+          const rect = btn.getBoundingClientRect();
+          const x = lastEvent.clientX - rect.left - rect.width / 2;
+          const y = lastEvent.clientY - rect.top - rect.height / 2;
+          btn.style.transform = `translate(${x * 0.18}px, ${y * 0.35}px)`;
+          magneticTicking = false;
+        });
+      }
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+    });
+  });
+
+  /* ---------- 6b. CONTACT SUCCESS POPUP ---------- */
+  const popupOverlay = document.getElementById('popupOverlay');
+  let popupHideTimer = null;
+
+  const showSuccessPopup = () => {
+    if (!popupOverlay) return;
+    popupOverlay.classList.add('show');
+    clearTimeout(popupHideTimer);
+    popupHideTimer = setTimeout(() => {
+      popupOverlay.classList.remove('show');
+    }, 5000);
+  };
+
+  // allow closing early by clicking outside the box
+  if (popupOverlay) {
+    popupOverlay.addEventListener('click', (e) => {
+      if (e.target === popupOverlay) {
+        popupOverlay.classList.remove('show');
+        clearTimeout(popupHideTimer);
+      }
+    });
+  }
+
+  /* ---------- 7. CONTACT FORM — AJAX SUBMIT (FORMSPREE) ---------- */
+  const form = document.querySelector('.contact__form');
+  const status = document.getElementById('contactStatus');
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = form.querySelector('.contact__button');
+      const originalLabel = submitBtn ? submitBtn.value : 'Send';
+
+      if (submitBtn) { submitBtn.value = 'Sending...'; submitBtn.disabled = true; }
+      if (status) { status.textContent = ''; status.classList.remove('is-error'); }
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' }
+        });
+
+        if (response.ok) {
+          if (status) status.textContent = 'Message sent — thank you! I\'ll reply soon.';
+          showSuccessPopup();
+          form.reset();
+        } else {
+          throw new Error('Form submission failed');
+        }
+      } catch (err) {
+        if (status) {
+          status.textContent = 'Something went wrong. Please email me directly instead.';
+          status.classList.add('is-error');
+        }
+      } finally {
+        if (submitBtn) { submitBtn.value = originalLabel; submitBtn.disabled = false; }
+      }
+    });
+  }
+
+  /* ---------- 8. SCROLLREVEAL ---------- */
+  if (typeof ScrollReveal !== 'undefined') {
+    const sr = ScrollReveal({
+      origin: 'bottom',
+      distance: '40px',
+      duration: 900,
+      delay: 100,
+      reset: false
+    });
+
+    sr.reveal('.about__img', { origin: 'left' });
+    sr.reveal('.about__subtitle, .about__text', { interval: 100, delay: 200 });
+    sr.reveal('.skills__subtitle, .skills__text', { delay: 150 });
+    sr.reveal('.skills__data', { interval: 90, delay: 200 });
+    sr.reveal('.skills__img', { origin: 'right', delay: 200 });
+    sr.reveal('.work__img', { interval: 110, delay: 150 });
+    sr.reveal('.projects__intro', { delay: 100 });
+    sr.reveal('.project__card', { interval: 130, delay: 150 });
+    sr.reveal('.contact__form', { delay: 150 });
+    sr.reveal('.section-eyebrow, .section-title', { delay: 50 });
+  }
+
+});
+
+    </script>
+
+</body>
+
+</html>
+
